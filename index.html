@@ -5,43 +5,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Birthday-gift</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="box">
-      xin la xin chuc mung sinh nhat
-      <div id="X"><i class="fas fa-times"></i>
+    <div id="fff">
+      <div id="box">
+        Đoàn quân Việt Nam đi chung lòng cứu quốc, bước chân dồn vang trên đường
+        gập ghềnh xa, cờ in máu chiến thắng mang hồn nước, súng ngoài xa chen
+        khúc quân hành ca, đường vinh quang xây xác quân thù, thắng gian lao
+        cùng nhau lập chiến khu, vì nhân dân chiến đấu không ngừng, tiến mau ra
+        sa trường. Tiến lên, cùng tiến lên, nước non Việt Nam ta vững bền. Đoàn
+        quân Việt Nam đi, sao vàng phấp phới. Dắt giống nòi quê hương qua nơi
+        lầm lan. Cùng chung sức phấn đấu xây đời mới. Đứng đều lên gông xích ta
+        đập tan. Từ bao lâu ta nuốt căm hờn. quyết hy sinh đời ta tươi thăm hơn.
+        Vì nhân dân chiến đấu không ngừng. tiến mau ra sa trường. tiến lên cùng
+        tiến lên Nước non Việt Nam ta vững bền.
+        <div id="X"><i class="fas fa-times"></i></div>
       </div>
     </div>
     <div id="particles-js"></div>
     <img class="cupcake" src="cupcake.png" alt="Hoang Anh ngu" />
-    <audio id="music" controls autoplay>
-      <source
+    <!-- <audio id="music" controls autoplay> -->
+    <!-- <source
         src="y2mate.com - Super Idol phiên bản Noel  Super Chrismas.mp3"
         type="audio/ogg"
       />
       Your browser does not support the audio element.
-    </audio>
+    </audio> -->
+    <section class="player">
+      <i class="fas fa-music"></i>
+      <section class="player__controls">
+        <i class="fas fa-pause player__toggle"></i>
+        <section class="player__process">
+          <span class="player__process--current"></span>
+        </section>
+      </section>
+    </section>
     <div class="heading">kk <span class="heart">❤️</span></div>
-    <div class="send">Gui den Cát Tường</div>
+    <div class="send">Gui den Nhat Khang cuto </div>
     <script src="particles.min.js"></script>
     <script>
+      const toggleAudioBtn = document.querySelector(".player__toggle");
+      const processCurrent = document.querySelector(
+        ".player__process--current"
+      );
+
+      let audio = new Audio("masaocon.mp3");
+
+      toggleAudioBtn.addEventListener("click", () => {
+        if (!audio.paused) {
+          audio.pause();
+          toggleAudioBtn.classList.add("fa-play");
+          toggleAudioBtn.classList.remove("fa-pause");
+          audioPlaying = false;
+        } else {
+          audio.play();
+          toggleAudioBtn.classList.add("fa-pause");
+          toggleAudioBtn.classList.remove("fa-play");
+          audioPlaying = true;
+        }
+      });
+
+      audio.addEventListener("timeupdate", () => {
+        processCurrent.style.width =
+          (audio.currentTime / audio.duration) * 100 + "%";
+      });
+
+      audio.addEventListener("ended", () => {
+        audio.currentTime = 0;
+        audio.play();
+      });
       particlesJS.load("particles-js", "particles.json", function () {
         console.log("callback - particles.js config loaded");
       });
       let cupcake = document.getElementsByClassName("cupcake")[0];
-      let box = document.getElementById("box");
+      let box = document.getElementById("fff");
       let close = document.getElementById("X");
-      close.addEventListener("click",function(){
+      close.addEventListener("click", function () {
         box.style.visibility = "hidden";
         box.style.opacity = 0;
-        box.style.transform = "scale(0)"
-      })
+        box.style.transform = "translate(-50%,-50% ) scale(0)";
+      });
       cupcake.addEventListener("click", function () {
         box.style.visibility = "visible";
         box.style.opacity = 100;
-        box.style.transform = "scale(1)";
+        box.style.transform = "translate(-50%,-50% ) scale(1)";
       });
     </script>
   </body>
