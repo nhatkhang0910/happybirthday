@@ -12,20 +12,22 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
     <div id="fff">
       <div id="box">
-        Đoàn quân Việt Nam đi chung lòng cứu quốc, bước chân dồn vang trên đường
-        gập ghềnh xa, cờ in máu chiến thắng mang hồn nước, súng ngoài xa chen
-        khúc quân hành ca, đường vinh quang xây xác quân thù, thắng gian lao
-        cùng nhau lập chiến khu, vì nhân dân chiến đấu không ngừng, tiến mau ra
-        sa trường. Tiến lên, cùng tiến lên, nước non Việt Nam ta vững bền. Đoàn
-        quân Việt Nam đi, sao vàng phấp phới. Dắt giống nòi quê hương qua nơi
-        lầm lan. Cùng chung sức phấn đấu xây đời mới. Đứng đều lên gông xích ta
-        đập tan. Từ bao lâu ta nuốt căm hờn. quyết hy sinh đời ta tươi thăm hơn.
-        Vì nhân dân chiến đấu không ngừng. tiến mau ra sa trường. tiến lên cùng
-        tiến lên Nước non Việt Nam ta vững bền.
+        10/12/2021, Chúc mừng sinh nhật bé iu của anh, anh chúc bé ngày càng
+        xinh hơn, đáng iu hơn, học giỏi hơn và quan trọng hết là phải yêu yêu
+        thương bản thân em và iu anh nhiều hơn nữa. Năm nay tiếc thật là vì dịch
+        bệnh mà mình phải cách xa nhau nên mình không thể gặp được nhau do đó
+        đây là món quà nho nhỏ anh muốn dành tặng cho bé, một năm qua thật là tẻ
+        nhạt nếu như không có bé. Cũng như mọi năm thôi, anh chúc bé có một tuổi
+        mới thật nhiều niềm vui, hi vọng năm sau cũng có thể đón cái sinh nhật
+        tiếp theo cùng nhau, yêu bé!
         <div id="X"><i class="fas fa-times"></i></div>
       </div>
     </div>
@@ -47,8 +49,10 @@
         </section>
       </section>
     </section>
-    <div class="heading">kk <span class="heart">❤️</span></div>
-    <div class="send">Gui den Nhat Khang cuto </div>
+    <div class="heading">
+      Gui den nguoi yeu cua Khang <span class="heart">❤️</span>
+    </div>
+    <div class="send">Nhấn vào chiếc bánh để thấy điều kì diệu</div>
     <script src="particles.min.js"></script>
     <script>
       const toggleAudioBtn = document.querySelector(".player__toggle");
@@ -93,6 +97,7 @@
         box.style.transform = "translate(-50%,-50% ) scale(0)";
       });
       cupcake.addEventListener("click", function () {
+        audio.play();
         box.style.visibility = "visible";
         box.style.opacity = 100;
         box.style.transform = "translate(-50%,-50% ) scale(1)";
