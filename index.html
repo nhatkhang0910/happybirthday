@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Birthday-gift</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body> 
-    <div id="particles-js"> </div>
-    <img src="cupcake.png" alt="Hoang Anh ngu">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="box">
+      xin la xin chuc mung sinh nhat
+      <div id="X"><i class="fas fa-times"></i>
+      </div>
+    </div>
+    <div id="particles-js"></div>
+    <img class="cupcake" src="cupcake.png" alt="Hoang Anh ngu" />
     <audio id="music" controls autoplay>
-        <source src="DungGoiAnhLaAnhTrai-DamVinhHung-7121650.mp3" type="audio/ogg">
-        Your browser does not support the audio element.
-      </audio>
+      <source
+        src="y2mate.com - Super Idol phiên bản Noel  Super Chrismas.mp3"
+        type="audio/ogg"
+      />
+      Your browser does not support the audio element.
+    </audio>
     <div class="heading">kk <span class="heart">❤️</span></div>
     <div class="send">Gui den Cát Tường</div>
-    <script src="particles.min.js" ></script>
+    <script src="particles.min.js"></script>
     <script>
-        particlesJS.load('particles-js', 'particles.json', function() {
-          console.log('callback - particles.js config loaded'); });
-         </script>
-</body>
+      particlesJS.load("particles-js", "particles.json", function () {
+        console.log("callback - particles.js config loaded");
+      });
+      let cupcake = document.getElementsByClassName("cupcake")[0];
+      let box = document.getElementById("box");
+      let close = document.getElementById("X");
+      close.addEventListener("click",function(){
+        box.style.visibility = "hidden";
+        box.style.opacity = 0;
+        box.style.transform = "scale(0)"
+      })
+      cupcake.addEventListener("click", function () {
+        box.style.visibility = "visible";
+        box.style.opacity = 100;
+        box.style.transform = "scale(1)";
+      });
+    </script>
+  </body>
 </html>
